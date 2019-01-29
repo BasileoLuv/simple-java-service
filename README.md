@@ -13,3 +13,7 @@ mvn package test
 ```
 java -jar target/Calc-1.0-SNAPSHOT.jar 3 + 5
 ```
+# How to run checkstyle
+```
+mvn checkstyle:checkstyle -Dcheckstyle.config.location=checkstyle.xml
+```
