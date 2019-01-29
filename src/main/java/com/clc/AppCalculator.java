@@ -22,5 +22,5 @@ public class AppCalculator {
         if (operator.equals("-")) {
             System.out.println(new Calculator().subtract(x, y));
         }
-    }   
+}
 }
