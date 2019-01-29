@@ -9,7 +9,7 @@ mvn test
 ```
 mvn package test
 ```
-# How to run the App
+# How to run the App.
 ```
 java -jar target/Calc-1.0-SNAPSHOT.jar 3 + 5
 ```
