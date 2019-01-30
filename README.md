@@ -5,7 +5,7 @@ A simple Java service that shows system info and performs arithmetic operations
 ```
 mvn test
 ```
-# How to package and run tests
+# How to package and run tests!
 ```
 mvn package test
 ```
