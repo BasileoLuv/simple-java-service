@@ -9,6 +9,13 @@
 
     <name>Calculator</name>
     <url>http://maven.apache.org</url>
+           
+  <distributionManagement>
+   <snapshotRepository>
+      <id>nexus</id>
+       <url>http://docker.for.mac.localhost:8081/repository/maven-snapshots/</url>
+   </snapshotRepository>
+</distributionManagement>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -38,6 +45,14 @@
         </archive>
       </configuration>
     </plugin>
+           <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>                        
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <inherited>false</inherited>
+                        <configuration>
+                            <altDeploymentRepository>nexus::default::http://docker.for.mac.localhost:8089/repository/maven-releases/</altDeploymentRepository>
+                        </configuration>
+                    </plugin>
   </plugins>
 </build>
 </project>
