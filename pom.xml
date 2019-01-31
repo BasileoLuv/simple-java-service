@@ -50,7 +50,7 @@
                         <artifactId>maven-deploy-plugin</artifactId>
                         <inherited>false</inherited>
                         <configuration>
-                            <altDeploymentRepository>nexus::default::http://docker.for.mac.localhost:8089/repository/maven-releases/</altDeploymentRepository>
+                            <altDeploymentRepository>nexus::default::http://docker.for.mac.localhost:8081/repository/maven-snapshots/</altDeploymentRepository>
                         </configuration>
                     </plugin>
   </plugins>
