@@ -13,7 +13,7 @@
   <distributionManagement>
    <snapshotRepository>
       <id>nexus</id>
-       <url>http://nexus:8089/repository/maven-snapshots/</url>
+       <url>http://nexus:8081/repository/maven-snapshots/</url>
    </snapshotRepository>
 </distributionManagement>
 
@@ -52,7 +52,7 @@
                         <artifactId>maven-deploy-plugin</artifactId>
                         <inherited>false</inherited>
                         <configuration>
-                            <altDeploymentRepository>nexus::default::http://nexus:8089/repository/maven-snapshots/</altDeploymentRepository>
+                            <altDeploymentRepository>nexus::default::http://nexus:8081/repository/maven-snapshots/</altDeploymentRepository>
                         </configuration>
                     </plugin>
   </plugins>
