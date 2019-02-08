@@ -9,9 +9,18 @@
 
     <name>Calculator</name>
     <url>http://maven.apache.org</url>
+           
+  <distributionManagement>
+   <snapshotRepository>
+      <id>nexus</id>
+       <url>http://nexus:8081/repository/maven-snapshots/</url>
+   </snapshotRepository>
+</distributionManagement>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+             <maven.compiler.source>1.6</maven.compiler.source>
+<maven.compiler.target>1.6</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
@@ -23,6 +32,32 @@
     </dependencies>
     <build>
   <plugins>
+<plugin>
+    <groupId>pl.project13.maven</groupId>
+    <artifactId>git-commit-id-plugin</artifactId>
+    <version>2.2.4</version>
+    <executions>
+        <execution>
+            <id>get-the-git-infos</id>
+            <goals>
+                <goal>revision</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+        <prefix>git</prefix>
+        <verbose>false</verbose>
+        <generateGitPropertiesFile>true</generateGitPropertiesFile>
+        <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+        <format>json</format>
+        <gitDescribe>
+            <skip>false</skip>
+            <always>false</always>
+            <dirty>-dirty</dirty>
+        </gitDescribe>
+    </configuration>
+</plugin>
     <plugin>
       <!-- Build an executable JAR -->
       <groupId>org.apache.maven.plugins</groupId>
@@ -38,6 +73,14 @@
         </archive>
       </configuration>
     </plugin>
+           <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>                        
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <inherited>false</inherited>
+                        <configuration>
+                            <altDeploymentRepository>nexus::default::http://nexus:8081/repository/maven-snapshots/</altDeploymentRepository>
+                        </configuration>
+                    </plugin>
   </plugins>
 </build>
 </project>
