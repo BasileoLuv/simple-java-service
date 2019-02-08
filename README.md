@@ -13,3 +13,10 @@ mvn package test
 ```
 java -jar target/Calc-1.0-SNAPSHOT.jar 3 + 5
 ```
+# How to package
+```
+mvn package
+```
+# Commit-plugin
+
+We get information about commit from the git.properties after package
