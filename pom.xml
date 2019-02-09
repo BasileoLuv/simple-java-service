@@ -9,6 +9,9 @@
 
     <name>Calculator</name>
     <url>http://maven.apache.org</url>
+           
+
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
              <maven.compiler.source>1.6</maven.compiler.source>
@@ -65,6 +68,14 @@
         </archive>
       </configuration>
     </plugin>
+           <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>                        
+                        <artifactId>maven-deploy-plugin</artifactId>
+                        <inherited>false</inherited>
+                        <configuration>
+                            <altDeploymentRepository>nexus::default::http://nexus:8081/repository/maven-snapshots/</altDeploymentRepository>
+                        </configuration>
+                    </plugin>
   </plugins>
 </build>
 </project>
