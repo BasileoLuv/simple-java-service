@@ -13,9 +13,9 @@ mvn package test
 ```
 java -jar target/Calc-1.0-SNAPSHOT.jar 3 + 5
 ```
-# How to package
+# How to run checkstyle
 ```
-mvn package
+mvn checkstyle:checkstyle -Dcheckstyle.config.location=checkstyle.xml
 ```
 # Commit-plugin
 
