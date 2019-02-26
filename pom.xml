@@ -69,8 +69,8 @@
                         <artifactId>maven-deploy-plugin</artifactId>
                         <inherited>false</inherited>
                         <configuration>
-                            <altDeploymentRepository>nexus::default::http://nexus:8081/repository/maven-snapshots/</altDeploymentRepository>
-                            <altReleaseDeploymentRepository>nexus::default::http://nexus:8081/repository/maven-snapshots/</altReleaseDeploymentRepository>
+                            <altSnapshotDeploymentRepository>snapshots::default::http://localhost:8089/repository/maven-snapshots/</altSnapshotDeploymentRepository>
+                            <altReleaseDeploymentRepository>releases::default::http://localhost:8089/repository/maven-releases/</altReleaseDeploymentRepository>
                         </configuration>
                     </plugin>
   </plugins>
