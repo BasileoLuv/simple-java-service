@@ -70,7 +70,6 @@
                         <inherited>false</inherited>
                         <configuration>
                             <altDeploymentRepository>nexus::default::http://nexus:8081/repository/maven-snapshots/</altDeploymentRepository>
-                            <altDeploymentRepository>nexus::default::http://nexus:8081/repository/maven-releases/</altDeploymentRepository>
                         </configuration>
                     </plugin>
   </plugins>
