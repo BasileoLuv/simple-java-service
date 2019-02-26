@@ -64,14 +64,6 @@
         </archive>
       </configuration>
     </plugin>
-           <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>                        
-                        <artifactId>maven-deploy-plugin</artifactId>
-                        <inherited>false</inherited>
-                        <configuration>
-                            <altDeploymentRepository>nexus::default::http://nexus:8081/repository/maven-snapshots/</altDeploymentRepository>
-                        </configuration>
-                    </plugin>
   </plugins>
 </build>
 </project>
