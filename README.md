@@ -11,7 +11,7 @@ mvn package test
 ```
 # How to run the App
 ```
-java -cp target/Calc-1.0-SNAPSHOT.jar com.clc.AppCalculator 3 + 5
+java -jar target/Calc-1.0-SNAPSHOT.jar 3 + 5
 ```
 # How to run checkstyle
 ```
