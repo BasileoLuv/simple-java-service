@@ -71,7 +71,6 @@
                         <artifactId>maven-deploy-plugin</artifactId>
                         <inherited>false</inherited>
                         <configuration>
-                           <altReleaseDeploymentRepository>releases::default::http://nexus:8081/repository/maven-releases/</altReleaseDeploymentRepository>                       
                     </configuration>
                     </plugin>
   </plugins>
