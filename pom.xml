@@ -4,14 +4,23 @@
 
     <groupId>com.clc</groupId>
     <artifactId>Calc</artifactId>
-    <version>1.0.11</version>
+    <version>1.0.4-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Calculator</name>
     <url>http://maven.apache.org</url>
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.2.RELEASE</version>
+    </parent>
+
+
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-             <maven.compiler.source>1.6</maven.compiler.source>
-<maven.compiler.target>1.6</maven.compiler.target>
+             <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+             <maven.compiler.source>1.8</maven.compiler.source>
+             <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
@@ -20,10 +29,18 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
     </dependencies>
     <build>
-  <plugins>
-<plugin>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+    <plugin>
     <groupId>pl.project13.maven</groupId>
     <artifactId>git-commit-id-plugin</artifactId>
     <version>2.2.4</version>
@@ -48,9 +65,8 @@
             <dirty>-dirty</dirty>
         </gitDescribe>
     </configuration>
-</plugin>
-    <plugin>
-      <!-- Build an executable JAR -->
+    </plugin>
+    <!--plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-jar-plugin</artifactId>
       <version>3.0.2</version>
@@ -63,14 +79,13 @@
           </manifest>
         </archive>
       </configuration>
-    </plugin>
+    </plugin-->
            <plugin>
                         <groupId>org.apache.maven.plugins</groupId>                        
                         <artifactId>maven-deploy-plugin</artifactId>
                         <inherited>false</inherited>
                         <configuration>
-                            <altSnapshotDeploymentRepository>snapshots::default::http://localhost:8089/repository/maven-snapshots/</altSnapshotDeploymentRepository>
-                            <altReleaseDeploymentRepository>releases::default::http://localhost:8089/repository/maven-releases/</altReleaseDeploymentRepository>
+                            <altDeploymentRepository>nexus::default::http://localhost:8089/repository/maven-snapshots/</altDeploymentRepository>
                         </configuration>
                     </plugin>
   </plugins>
